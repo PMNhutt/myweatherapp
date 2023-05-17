@@ -1,21 +1,28 @@
-import '@styles/globals.css'
-import { Inter } from 'next/font/google'
+import "@styles/globals.css";
+import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ['latin'] })
+// ** components
+import Nav from "@components/Nav/Nav";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'Thời tiết hum nay',
-  description: 'Ứng dụng xem thời tiết hum nay',
-}
+  title: "Thời tiết hum nay",
+  description: "Ứng dụng xem thời tiết hum nay",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <main className="">
+          {children}
+        </main>
+      </body>
     </html>
-  )
+  );
 }
