@@ -20,14 +20,21 @@
   width: 100vw;
   min-height: 100vh;
   position: fixed;
-  display: flex;
-  justify-content: center;
-  padding: 120px 24px 160px 24px;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* padding: 120px 24px 160px 24px; */
   pointer-events: none;
 }
 
-.main:before {
-  background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #a9a9a9 150%);
+.main:after {
+  /* background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #111111 200%); */
+  background: rgb(64, 64, 64);
+  background: linear-gradient(
+    180deg,
+    rgba(64, 64, 64, 0) 37%,
+    rgba(33, 33, 33, 0.525) 85%,
+    rgba(17, 17, 17, 0.525) 100%
+  );
   position: absolute;
   content: "";
   z-index: 2;
@@ -46,11 +53,11 @@
 }
 
 .glassmorphism-blue {
-  @apply h-full w-full bg-indigo-900 rounded-xl bg-clip-padding backdrop-filter backdrop-blur bg-opacity-10 border border-indigo-100 p-5
+  @apply h-full w-full bg-gray-400 rounded-xl bg-clip-padding backdrop-filter backdrop-blur bg-opacity-10  border-indigo-100 p-5;
 }
 
 .white_gradient {
-  @apply bg-gradient-to-r from-slate-300 via-slate-100 to-slate-500 bg-clip-text text-transparent
+  @apply bg-gradient-to-r from-slate-300 via-slate-100 to-slate-500 bg-clip-text text-transparent;
 }
 
 .orange_gradient {

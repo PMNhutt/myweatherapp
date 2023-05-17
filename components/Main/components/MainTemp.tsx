@@ -1,6 +1,9 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import CountingNumber from "@components/CountingNumber";
+
+import { getWeatherImg } from "@utils/getWeatherImg";
 
 interface MainTempProps {
   currentData:
@@ -35,28 +38,40 @@ interface MainTempProps {
       }
     | undefined;
   activeTemp: number;
-  setActiveTemp: (a: number) => void
+  setActiveTemp: (temp: number) => void;
 }
 
-const MainTemp: React.FC<MainTempProps> = ({ currentData, activeTemp, setActiveTemp }) => {
+const MainTemp: React.FC<MainTempProps> = ({
+  currentData,
+  activeTemp,
+  setActiveTemp,
+}) => {
   // const [activeTemp, setActiveTemp] = useState(0);
   return (
-    <div className="flex gap-5 mt-5 mb-1 flex-center">
+    <div className="flex-center gap-5 mt-5 mb-1">
       {currentData && (
         <>
           <Image
-            src={`/assets/images/partly-cloudy-sun.svg`}
+            src={getWeatherImg(currentData.condition.code, currentData.is_day)}
             height={90}
             width={90}
             alt="empt"
             className="object-contain"
           />
 
-          <p className="text-white text-6xl font-bold">
-            {activeTemp == 0
-              ? `${currentData.temp_c}°`
-              : `${Math.round(currentData.temp_f)}°`}
-          </p>
+          <div className="w-[110px]">
+            <p className="text-white text-6xl font-bold">
+              {activeTemp == 0 ? (
+                <span className="flex">
+                  <CountingNumber n={currentData.temp_c} />°
+                </span>
+              ) : (
+                <span className="flex">
+                  <CountingNumber n={Math.round(currentData.temp_f)} />°
+                </span>
+              )}
+            </p>
+          </div>
 
           <div className="flex flex-col gap-2">
             <button
