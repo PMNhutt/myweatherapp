@@ -60,7 +60,7 @@ const Main = () => {
     const fetchData = async () => {
       const res = await instances.get("/current.json", {
         params: {
-          q: "Ho Chi Minh",
+          q: "Dong Hung Thuan",
           lang: "vi",
           key: process.env.API_KEY,
         },
@@ -71,14 +71,14 @@ const Main = () => {
 
     const handler = setInterval(() => {
       fetchData();
-    }, 60000);
+    }, 300000);
 
     return () => clearInterval(handler);
   }, []);
 
   return (
     <div className='w-full flex-center'>
-      <div className="glassmorphism-blue sm:max-w-[30vw] flex-center flex-col">
+      <div className="glassmorphism-blue flex-center flex-col">
         {/* location */}
         <h1 className="text-white text-center font-bold text-4xl ">
           Ho Chi Minh City

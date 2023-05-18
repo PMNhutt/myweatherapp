@@ -1,4 +1,4 @@
-export const getWeatherImg = (code, isDay) => {
+export const getWeatherImg = (code: number, isDay: number) => {
     let src = ''
     switch (code) {
         case 1000:

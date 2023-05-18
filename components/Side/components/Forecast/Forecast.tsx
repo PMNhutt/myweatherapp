@@ -1,42 +1,54 @@
 "use client";
-import { useState, useEffect } from "react";
-import instances from "@utils/axios";
-import Image from "next/image";
+import ItemCard from "../ItemCard";
 
-const ForecastCard = () => {
-  return (
-    <div className='flex items-center flex-col'>
-      <p className="text-white font-medium">thứ sáu 19</p>
-      <div className="mt-3 glassmorphism-blue flex items-center flex-col gap-2">
-        <Image
-          src="/assets/images/cloudy-day.png"
-          width={40}
-          height={40}
-          alt="weather"
-          className="object-contain"
-        />
-        <div className="flex items-center gap-3 text-white">
-          <p className="text-xl font-medium">31°</p>
-          <p>32°</p>
-        </div>
-        <p className='text-white'>Mây nhìu</p>
-      </div>
-    </div>
-  );
-};
+interface ForecastProps {
+  forecastData:
+    | [
+        {
+          date: string;
+          day: {
+            condition: {
+              text: string;
+              code: number;
+            };
+            maxtemp_c: number;
+            maxtemp_f: number;
+            mintemp_c: number;
+            mintemp_f: number;
+            uv: number;
+            is_day: number
+            avghumidity: number;
+            avgtemp_c: number;
+            avgtemp_f: number;
+            avgvis_km: number;
+            avgvis_miles: number;
+          };
+        }
+      ]
+    | undefined;
+}
 
-const Forecast = () => {
+const Forecast: React.FC<ForecastProps> = ({ forecastData }) => {
   // ** const
-  const [forecastList, setForecastList] = useState([]);
 
   return (
     <div>
       <p className="text-white font-medium text-2xl">Dự báo thời tiết</p>
 
       <div className="flex gap-3 mt-5">
-        <ForecastCard />
-        <ForecastCard />
-        <ForecastCard />
+        {forecastData &&
+          forecastData.map((item) => (
+            <div key={crypto.randomUUID()}>
+              <ItemCard
+                localTime={item.date}
+                code={item.day.condition.code}
+                max_temp_c={item.day.maxtemp_c}
+                min_temp_c={item.day.mintemp_c}
+                condition={item.day.condition.text}
+                isday={item.day.is_day}
+              />
+            </div>
+          ))}
       </div>
     </div>
   );
