@@ -6,7 +6,7 @@ const Nav = () => {
     <nav className="fixed w-full z-20">
       {/* logo */}
       <div className="flex-center nav">
-        <div className="container items-center flex gap-2 sm:px-24 px-6 py-3">
+        <div className="container items-center flex gap-2 md:px-24 px-6 py-3">
           <Image
             alt="logo"
             width={40}

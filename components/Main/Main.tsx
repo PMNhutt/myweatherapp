@@ -2,51 +2,10 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import instances from "@utils/axios";
+import { currentData } from "@utils/interface";
 
 // ** components
 import MainTemp from "./components/MainTemp";
-
-interface currentData {
-  current: {
-    cloud: number;
-    condition: {
-      code: number;
-      icon: String;
-      text: String;
-    };
-    feelslike_c: number;
-    feelslike_f: number;
-    gust_kph: number;
-    gust_mph: number;
-    humidity: number;
-    is_day: number;
-    last_updated: String;
-    last_updated_epoch: number;
-    precip_in: number;
-    precip_mm: number;
-    pressure_in: number;
-    pressure_mb: number;
-    temp_c: number;
-    temp_f: number;
-    uv: number;
-    vis_km: number;
-    vis_miles: number;
-    wind_degree: number;
-    wind_dir: String;
-    wind_kph: number;
-    wind_mph: number;
-  };
-  location: {
-    country: String;
-    lat: number;
-    localtime: String;
-    localtime_epoch: number;
-    lon: number;
-    name: String;
-    region: String;
-    tz_id: String;
-  };
-}
 
 const Main = () => {
   // ** const
@@ -77,7 +36,7 @@ const Main = () => {
   }, []);
 
   return (
-    <div className='w-full flex-center'>
+    <div className="w-full flex-center">
       <div className="glassmorphism-blue flex-center flex-col">
         {/* location */}
         <h1 className="text-white text-center font-bold text-4xl ">

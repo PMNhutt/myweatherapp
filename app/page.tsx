@@ -11,7 +11,7 @@ export default function Home() {
 
       {/* main content */}
       <div className="flex-center">
-        <div className="container relative z-10 sm:px-24 px-6">
+        <div className="container relative z-10 md:px-24 px-6">
           <Main />
           <Side />
         </div>

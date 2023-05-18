@@ -2,21 +2,18 @@
 import React from "react";
 import Image from "next/image";
 import { getWeatherImg } from "@utils/getWeatherImg";
-
-interface ItemProps {
-  localTime: string;
-  code: number;
-  max_temp_c: number;
-  min_temp_c: number;
-  condition: string;
-  isday: number
-}
+import { ItemProps } from "@utils/interface";
+import dayjs from "dayjs";
+require("dayjs/locale/vi");
+dayjs.locale("vi");
 
 const ItemCard: React.FC<ItemProps> = (props) => {
   const { localTime, code, max_temp_c, min_temp_c, condition, isday } = props;
+  var localizedFormat = require("dayjs/plugin/localizedFormat");
+  dayjs.extend(localizedFormat);
   return (
     <div className="flex items-center flex-col">
-      <p className="text-white font-medium">{localTime}</p>
+      <p className="text-white font-medium">{dayjs(localTime).format("ll")}</p>
       <div className="mt-3 glassmorphism-blue flex items-center flex-col gap-2">
         <Image
           src={getWeatherImg(code, isday)}

@@ -1,32 +1,6 @@
 "use client";
 import ItemCard from "../ItemCard";
-
-interface ForecastProps {
-  forecastData:
-    | [
-        {
-          date: string;
-          day: {
-            condition: {
-              text: string;
-              code: number;
-            };
-            maxtemp_c: number;
-            maxtemp_f: number;
-            mintemp_c: number;
-            mintemp_f: number;
-            uv: number;
-            is_day: number
-            avghumidity: number;
-            avgtemp_c: number;
-            avgtemp_f: number;
-            avgvis_km: number;
-            avgvis_miles: number;
-          };
-        }
-      ]
-    | undefined;
-}
+import { ForecastProps } from "@utils/interface";
 
 const Forecast: React.FC<ForecastProps> = ({ forecastData }) => {
   // ** const

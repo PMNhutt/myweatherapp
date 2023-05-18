@@ -1,20 +1,6 @@
 import Image from "next/image";
 import { getAQIImg, getAQIText } from "@utils/getAQI";
-
-interface AirQualProps {
-  airQualityData:
-    | {
-        co: number;
-        o3: number;
-        no2: number;
-        so2: number;
-        pm2_5: number;
-        pm10: number;
-        "us-epa-index": number;
-        "gb-defra-index": number;
-      }
-    | undefined;
-}
+import { AirQualProps } from "@utils/interface";
 
 const AirQuality: React.FC<AirQualProps> = ({ airQualityData }) => {
   const pm2_5: number = airQualityData?.pm2_5!;
@@ -47,10 +33,10 @@ const AirQuality: React.FC<AirQualProps> = ({ airQualityData }) => {
     return className;
   };
   return (
-    <div>
+    <div className='md:w-fit w-full'>
       <p className="text-white font-medium text-2xl">Chất lượng không khí</p>
       {airQualityData && (
-        <div className="glassmorphism-blue mt-5">
+        <div className="glassmorphism-blue w-full mt-5">
           <div className="flex items-center gap-8">
             <div>
               <p className="text-white">
@@ -59,13 +45,15 @@ const AirQuality: React.FC<AirQualProps> = ({ airQualityData }) => {
                   {Math.round(pm2_5)} (µg/m³)
                 </span>
               </p>
-              <p
-                className={`text-2xl ${getAQIColorClass(
-                  us_epa_index
-                )} font-semibold mt-3`}
-              >
-                {getAQIText(airQualityData?.["us-epa-index"])}
-              </p>
+              <div className='md:w-[200px]'>
+                <p
+                  className={`text-2xl ${getAQIColorClass(
+                    us_epa_index
+                  )} font-semibold mt-3`}
+                >
+                  {getAQIText(airQualityData?.["us-epa-index"])}
+                </p>
+              </div>
             </div>
             <div>
               <Image
