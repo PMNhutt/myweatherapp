@@ -37,7 +37,7 @@ const AirQuality: React.FC<AirQualProps> = ({ airQualityData }) => {
       <p className="text-white font-medium text-2xl">Chất lượng không khí</p>
       {airQualityData && (
         <div className="glassmorphism-blue w-full mt-5">
-          <div className="flex items-center gap-8">
+          <div className="flex justify-between items-center gap-8">
             <div>
               <p className="text-white">
                 PM2.5:{" "}

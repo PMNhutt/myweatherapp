@@ -44,7 +44,7 @@ const Side = () => {
   return (
     <div className="mt-[50px] w-full flex flex-wrap justify-around items-start gap-24">
       <Forecast forecastData={forecastData} />
-      <History />
+      {/* <History /> */}
       <AirQuality airQualityData={airQualityData} />
     </div>
   );

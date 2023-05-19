@@ -59,11 +59,11 @@
 }
 
 .container {
-  @apply xl:max-w-[1440px] w-full
+  @apply xl:max-w-[1440px] w-full;
 }
 
 .paddingX {
-  @apply md:px-[90px] px-[16px]
+  @apply md:px-[90px] px-[16px];
 }
 
 .glassmorphism {
@@ -75,7 +75,7 @@
 }
 
 .glassmorphism_btn {
-  @apply text-white hover:scale-[1.1] transition text-[12px] uppercase rounded-full px-5 py-2 backdrop-filter backdrop-blur bg-opacity-10 bg-white/20
+  @apply text-white hover:scale-[1.1] transition text-[12px] uppercase rounded-full px-5 py-2 backdrop-filter backdrop-blur bg-opacity-10 bg-white/20;
 }
 
 .white_gradient {
@@ -113,4 +113,33 @@
 
 .flex-between {
   @apply flex justify-between items-center;
+}
+
+/* Tooltip */
+.right-tooltip {
+  @apply absolute w-auto p-2 m-2 min-w-max left-10 bottom-[40%] translate-y-[70%] rounded-md shadow-md
+  text-white bg-gray-900 
+  text-xs font-bold 
+  transition-all duration-100 scale-0 origin-left;
+}
+
+.left-tooltip {
+  @apply absolute w-auto p-2 m-2 min-w-max right-10 bottom-[40%] translate-y-[70%] rounded-md shadow-md
+  text-white bg-gray-900 
+  text-xs font-bold 
+  transition-all duration-100 scale-0 origin-right;
+}
+
+.top-tooltip {
+  @apply absolute w-auto p-2 m-2 min-w-max bottom-6 right-[50%] translate-x-[50%] rounded-md shadow-md
+  text-white bg-gray-900 
+  text-xs font-bold 
+  transition-all duration-100 scale-0 origin-bottom;
+}
+
+.bottom-tooltip {
+  @apply absolute w-auto p-2 m-2 min-w-max top-6 right-[50%] translate-x-[50%] rounded-md shadow-md
+  text-white bg-gray-900 
+  text-xs font-bold 
+  transition-all duration-100 scale-0 origin-top;
 }

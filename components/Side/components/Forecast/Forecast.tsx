@@ -9,7 +9,7 @@ const Forecast: React.FC<ForecastProps> = ({ forecastData }) => {
     <div>
       <p className="text-white font-medium text-2xl">Dự báo thời tiết</p>
 
-      <div className="flex gap-3 mt-5">
+      <div className="grid sm:grid-cols-3 grid-cols-1 gap-3 mt-5">
         {forecastData &&
           forecastData.map((item) => (
             <div key={crypto.randomUUID()}>

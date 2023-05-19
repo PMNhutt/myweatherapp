@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import CountingNumber from "@components/CountingNumber";
 
-import { getWeatherImg } from "@utils/getWeatherImg";
+import { getWeatherImg } from "@utils/getWeatherMedia";
 import { MainTempProps } from "@utils/interface";
 
 const MainTemp: React.FC<MainTempProps> = ({
