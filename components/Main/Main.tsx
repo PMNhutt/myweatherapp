@@ -4,11 +4,19 @@ import Image from "next/image";
 import instances from "@utils/axios";
 import { currentData } from "@utils/interface";
 
+//** redux */
+import { useDispatch, useSelector } from "react-redux";
+import type { RootState } from "@app/Redux/store";
+import { setCurrentWeatherData } from "@app/Redux/actionSlice/globalSlice";
+
 // ** components
 import MainTemp from "./components/MainTemp";
 
 const Main = () => {
   // ** const
+  const globalStore = useSelector((state: RootState) => state.global);
+  const dispatch = useDispatch()
+
   const [currentData, setCurrentData] = useState<currentData>();
   const [activeTemp, setActiveTemp] = useState(0);
   const feelslikeTempc: number = currentData?.current?.feelslike_c!;
@@ -25,6 +33,7 @@ const Main = () => {
         },
       });
       setCurrentData(res.data);
+      dispatch(setCurrentWeatherData(res.data))
     };
     fetchData();
 
