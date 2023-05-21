@@ -52,6 +52,7 @@ const VideoBackground = () => {
           autoPlay={autoplay}
           muted
           loop
+          playsInline
           className="w-full h-full object-cover relative z-[5]"
         >
           <source src={videoSrc} type="video/mp4" />
@@ -61,6 +62,7 @@ const VideoBackground = () => {
           src={imageSrc}
           onLoadingComplete={() => setImageReady(true)}
           fill
+          priority
           className={`transition duration-300 ${
             imageReady ? "scale-100 blur-0" : "scale-120 blur-2xl"
           } object-cover`}

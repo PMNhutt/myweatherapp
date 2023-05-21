@@ -7,6 +7,7 @@ import Providers from "./Redux/provider";
 
 // ** components
 import Nav from "@components/Nav/Nav";
+import Footer from "@components/Footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,6 +34,7 @@ export default function RootLayout({
             </div>
             <Nav />
             {children}
+            <Footer />
           </main>
         </Providers>
       </body>

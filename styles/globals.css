@@ -17,6 +17,27 @@
   }
 }
 
+/* scroll-bar */
+::-webkit-scrollbar {
+  background: #151918;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  /* background-color: rgb(164, 165, 166); */
+  background: rgb(238, 174, 202);
+  background: linear-gradient(
+    172deg,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+  border-radius: 26px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(164, 165, 166);
+}
+
 .main {
   width: 100vw;
   min-height: 100vh;
@@ -72,7 +93,11 @@
 }
 
 .glassmorphism-blue {
-  @apply h-full w-full bg-gray-900 rounded-xl bg-clip-padding backdrop-filter backdrop-blur bg-opacity-10 border border-gray-500 p-5;
+  @apply h-full w-full bg-gray-900 rounded-xl bg-clip-padding backdrop-filter shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur bg-opacity-10 border border-gray-400 p-5;
+}
+
+.glassmorphism-footer {
+  @apply h-full w-full bg-gray-900 rounded-tr-xl rounded-tl-xl bg-clip-padding backdrop-filter shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur bg-opacity-10 border-t border-gray-500;
 }
 
 .glassmorphism_btn {
