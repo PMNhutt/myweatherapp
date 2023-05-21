@@ -97,7 +97,7 @@
 }
 
 .glassmorphism-footer {
-  @apply h-full w-full bg-gray-900 rounded-tr-xl rounded-tl-xl bg-clip-padding backdrop-filter shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur bg-opacity-10 border-t border-gray-500;
+  @apply h-full w-full bg-gray-900 rounded-tr-xl rounded-tl-xl bg-clip-padding backdrop-filter backdrop-blur bg-opacity-10 border-t border-gray-500;
 }
 
 .glassmorphism_btn {

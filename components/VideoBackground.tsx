@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import {
   getWeatherVideo,
   getWeatherVideoPlaceHolder,
@@ -20,13 +20,13 @@ const VideoBackground = () => {
   );
 
   useEffect(() => {
-    document.addEventListener("visibilitychange", () => {
-      if (document.visibilityState === "visible") {
-        setAutoplay(true);
-      } else {
-        setAutoplay(false);
-      }
-    });
+    // document.addEventListener("visibilitychange", () => {
+    //   if (document.visibilityState === "visible") {
+    //     setAutoplay(true);
+    //   } else {
+    //     setAutoplay(false);
+    //   }
+    // });
   }, []);
 
   useEffect(() => {
@@ -51,24 +51,25 @@ const VideoBackground = () => {
         <video
           autoPlay={autoplay}
           muted
+          src={videoSrc}
           loop
           playsInline
           className="w-full h-full object-cover relative z-[5]"
         >
-          <source src={videoSrc} type="video/mp4" />
+          {/* <source src={videoSrc} type="video/mp4" /> */}
         </video>
       )}
-        <Image
-          src={imageSrc}
-          onLoadingComplete={() => setImageReady(true)}
-          fill
-          priority
-          className={`transition duration-300 ${
-            imageReady ? "scale-100 blur-0" : "scale-120 blur-2xl"
-          } object-cover`}
-          quality={100}
-          alt="background-image"
-        />
+      <Image
+        src={imageSrc}
+        onLoadingComplete={() => setImageReady(true)}
+        fill
+        priority
+        className={`transition duration-300 ${
+          imageReady ? "scale-100 blur-0" : "scale-120 blur-2xl"
+        } object-cover`}
+        quality={100}
+        alt="background-image"
+      />
     </>
   );
 };

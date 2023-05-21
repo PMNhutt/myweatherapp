@@ -112,12 +112,15 @@ export const getWeatherVideo = (code: number, isDay: number) => {
       break;
     case 1003:
     case 1006:
-    case 1009:
     case 1135:
       src =
         isDay == 1
           ? "https://firebasestorage.googleapis.com/v0/b/thoitiethumnay.appspot.com/o/cloudy2.mp4?alt=media&token=e29fa897-cc09-4b2f-8803-baecd6b78fbe"
           : "https://firebasestorage.googleapis.com/v0/b/thoitiethumnay.appspot.com/o/night-sky.mp4?alt=media&token=ade77714-d333-44b7-8a23-ed146dea97a9";
+      break;
+    case 1009:
+      src =
+        "https://firebasestorage.googleapis.com/v0/b/thoitiethumnay.appspot.com/o/over-cast.mp4?alt=media&token=c9a277db-0e11-4733-ac2b-641164cbd941";
       break;
     case 1030:
       src =
@@ -199,7 +202,8 @@ export const getWeatherVideo = (code: number, isDay: number) => {
     case 1237:
     case 1261:
     case 1264:
-      src = "https://firebasestorage.googleapis.com/v0/b/thoitiethumnay.appspot.com/o/hail_-_11579%20(720p).mp4?alt=media&token=8620831d-bb36-483a-b1c4-cd00870b7d16";
+      src =
+        "https://firebasestorage.googleapis.com/v0/b/thoitiethumnay.appspot.com/o/hail_-_11579%20(720p).mp4?alt=media&token=8620831d-bb36-483a-b1c4-cd00870b7d16";
       break;
     case 1276:
     case 1282:
@@ -218,8 +222,7 @@ export const getWeatherVideoPlaceHolder = (code: number, isDay: number) => {
   let src = "";
   switch (code) {
     case 1000:
-      src =
-        "/assets/images/sunny.jpg";
+      src = "/assets/images/sunny.jpg";
       break;
     case 1003:
     case 1006:
@@ -230,20 +233,20 @@ export const getWeatherVideoPlaceHolder = (code: number, isDay: number) => {
           ? "/assets/images/cloudy.jpg"
           : "/assets/images/night-sky.jpg";
       break;
+    case 1009:
+      src = "assets/images/over-cast.jpg";
+      break;
     case 1030:
-      src =
-        "/assets/images/mist.jpg";
+      src = "/assets/images/mist.jpg";
       break;
     case 1072:
     case 1198:
-      src =
-        "/assets/images/soap.jpg";
+      src = "/assets/images/soap.jpg";
       break;
     case 1087:
     case 1273:
     case 1279:
-      src =
-        "/assets/images/thunder.jpg";
+      src = "/assets/images/thunder.jpg";
       break;
     case 1150:
     case 1153:
@@ -260,8 +263,7 @@ export const getWeatherVideoPlaceHolder = (code: number, isDay: number) => {
     case 1213:
     case 1171:
       // src = "/assets/images/freezing-drizzle.png";
-      src =
-        "/assets/images/rain-drizzle.jpg";
+      src = "/assets/images/rain-drizzle.jpg";
       break;
     case 1183:
     case 1180:
@@ -278,34 +280,29 @@ export const getWeatherVideoPlaceHolder = (code: number, isDay: number) => {
     case 1201:
     case 1243:
     case 1246:
-      src =
-        "/assets/images/heavy_rain.jpg";
+      src = "/assets/images/heavy_rain.jpg";
       break;
     case 1204:
     case 1249:
     case 1255:
       // light-sleet
-      src =
-        "/assets/images/snow.jpg";
+      src = "/assets/images/snow.jpg";
       break;
     case 1207:
     case 1252:
     case 1258:
       // src = "/assets/images/moderate-or-heavily-sleet.png";
-      src =
-        "/assets/images/snow.jpg";
+      src = "/assets/images/snow.jpg";
       break;
     case 1216:
     case 1219:
       // src = "/assets/images/patchy-moderate-snow.png";
-      src =
-        "/assets/images/snow.jpg";
+      src = "/assets/images/snow.jpg";
       break;
     case 1222:
     case 1225:
       // src = "/assets/images/heavy-snow.png";
-      src =
-        "/assets/images/snow.jpg";
+      src = "/assets/images/snow.jpg";
       break;
     case 1237:
     case 1261:
@@ -314,12 +311,10 @@ export const getWeatherVideoPlaceHolder = (code: number, isDay: number) => {
       break;
     case 1276:
     case 1282:
-      src =
-        "/assets/images/thunder.jpg";
+      src = "/assets/images/thunder.jpg";
       break;
     default:
-      src =
-        "/assets/images/sunny.jpg";
+      src = "/assets/images/sunny.jpg";
       break;
   }
   return src;
